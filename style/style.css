@@ -1,1 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #ff7a7a;
+  background: #ff7a7a url(/images/bg-intro-mobile.png);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+header {
+  margin: 40px 0;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 1.7rem;
+  padding: 0 20px;
+  line-height: 1.4em;
+}
+
+p {
+  font-size: 0.9rem;
+  padding: 0;
+  line-height: 1.6em;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.form-section {
+  border-radius: 8px;
+  background-color: white;
+  -webkit-box-shadow: 0 7px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 7px 0 rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.blue-box {
+  border-radius: 8px;
+  background-color: #6055a5;
+  -webkit-box-shadow: 0 7px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 7px 0 rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+  padding: 0 60px;
+}
+
+.submit-btn {
+  border: none;
+  background-color: #38cc8c;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0 4px 0 #2eb279;
+          box-shadow: 0 4px 0 #2eb279;
+  width: 100%;
+}
+
+input {
+  border: 1px solid #d7d6e6;
+  color: #3e3c49;
+  text-align: left;
+  width: 100%;
+  font-weight: 500;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+input,
+.submit-btn {
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.disclaimer {
+  color: #b9b6d3;
+  font-size: 11px;
+  padding: 0 20px;
+}
+
+.disclaimer .bold,
+.disclaimer a,
+.disclaimer a:hover {
+  color: #ff7a7a;
+}
+
+footer p {
+  font-size: 11px;
+}
+
+footer a,
+footer a:hover {
+  color: #3e3c49;
+}
 /*# sourceMappingURL=style.css.map */

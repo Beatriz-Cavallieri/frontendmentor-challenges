@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACgBA,UAAU,CAAV,MAAU;AACV,YAAY,CAAZ,WAAY",
+    "sources": [
+        "style.scss",
+        "_variables.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}

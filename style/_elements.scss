@@ -1,0 +1,18 @@
+// all content inside a box with a shadow
+@mixin cards($color) {
+    border-radius: 8px;
+    background-color: $color;
+    box-shadow: 0 7px 0 rgba(#000, 0.15);
+    margin-bottom: 20px;
+}
+
+// button style
+@mixin greenButton() {
+    border: none;
+    background-color: $green;
+    color: white;
+    font-weight: map-get($font-weights , "medium");
+    text-transform: uppercase;
+    box-shadow: 0 4px 0 darken($green, 7);
+    width: 100%;
+}

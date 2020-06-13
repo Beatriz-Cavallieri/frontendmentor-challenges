@@ -1,44 +1,31 @@
-@import './_variables';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-@mixin boxes($color) {
-    border-radius: 8px;
-    background-color: $color;
-    box-shadow: 0 7px 0 rgba(#000, 0.15);
-    margin-bottom: 20px;
-}
+@import './_variables';
+@import './responsive';
+@import './elements';
 
 * {
-    text-align: center;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     color: white;
-    font-weight: 400;
+    font-weight: map-get($font-weights , "regular");
 }
 
 body {
     margin: 0;
     min-height: 100vh;
+    background: $red url(/images/bg-intro-mobile.png);
 }
 
 .container {
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    background-color: $red;
-    background: $red url(/images/bg-intro-mobile.png);
     min-height: 100vh;
-    padding: 20px;
+    display: flex;
+    align-items: center;
 }
 
-header {
-    margin: 40px 0;
-}
-
-h1 {
-    font-weight: 700;
+header h1 {
+    font-weight: map-get($font-weights , "bolder");
     font-size: 1.7rem;
-    padding: 0 20px;
     line-height: 1.4em;
 }
 
@@ -48,28 +35,19 @@ p {
     line-height: 1.6em;
 }
 
-.bold {
-    font-weight: 700;
-}
-
 .form-section {
-    @include boxes(white);
+    @include cards(white);
     padding: 20px;
 }
 
 .blue-box {
-    @include boxes($blue);
-    padding: 0 60px;
+    @include cards($blue);
+    padding: 5px 60px;
+    text-align: center;
 }
 
 .submit-btn {
-    border: none;
-    background-color: $green;
-    color: white;
-    font-weight: 500;
-    text-transform: uppercase;
-    box-shadow: 0 4px 0 darken($green, 7);
-    width: 100%;
+    @include greenButton();
 }
 
 input {
@@ -77,7 +55,7 @@ input {
     color: $dark-blue;
     text-align: left;
     width: 100%;
-    font-weight: 500;
+    font-weight: map-get($font-weights , "medium");
     padding: 0;
     margin-bottom: 15px;
 }
@@ -92,20 +70,17 @@ input,
     color: $grayish-blue;
     font-size: 11px;
     padding: 0 20px;
+    text-align: center;
     & .bold,
-    & a,
-    & a:hover {
+    & a {
         color: $red;
+        text-decoration: none;
+    }
+    & a:hover {
+        color: darken($red, $amount: 15);
     }
 }
 
-footer {
-    p {
-        font-size: 11px;
-    }
-     a,
-     a:hover {
-        color: $dark-blue;
-    }
+.bold {
+    font-weight: map-get($font-weights , "bolder");
 }
-

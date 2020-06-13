@@ -1,0 +1,33 @@
+//mobile
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        }
+    header {
+        text-align: center;
+        margin: 40px 20px 0 20px;
+        h1 {
+            padding: 0 20px;
+        }
+    }
+    .column {
+        margin: 20px;
+    }
+}
+
+// tablet and desktop
+@media only screen and (min-width: 768px) { 
+    .container {
+        flex-direction: row;
+        justify-content: space-around;
+        max-width: 85%;
+    }
+    header {
+        text-align: left;
+    }
+    header,
+    .column {
+        width: 47%;
+    }
+}

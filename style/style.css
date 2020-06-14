@@ -77,7 +77,7 @@ p {
   line-height: 1.6em;
 }
 
-.form-section {
+form {
   border-radius: 8px;
   background-color: white;
   -webkit-box-shadow: 0 7px 0 rgba(0, 0, 0, 0.15);

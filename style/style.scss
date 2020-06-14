@@ -35,7 +35,7 @@ p {
     line-height: 1.6em;
 }
 
-.form-section {
+form {
     @include cards(white);
     padding: 20px;
 }

@@ -5,52 +5,40 @@ const emailAddress = document.getElementById('email')
 const password = document.getElementById('password')
 const form = document.getElementById('form')
 
-form.addEventListener('submit', e => {
-    if (checkEmpty(firstName)) {
-        e.preventDefault()
-        firstName.parentElement.classList.add('error')
-    }
-    else {
-        firstName.parentElement.classList.remove('error')
-    }
-    if (checkEmpty(lastName)) {
-        e.preventDefault()
-        lastName.parentElement.classList.add('error')
-    }
-    else {
-        lastName.parentElement.classList.remove('error')
+form.addEventListener('submit', (e) => submit(e))
+
+function submit(event) {
+    if (checkEmpty([firstName, lastName, password])) {
+        event.preventDefault()
     }
     if (checkEmpty(emailAddress) || !isEmail(emailAddress)) {
-        e.preventDefault()
-        emailAddress.parentElement.classList.add('error')
+        event.preventDefault()
+        showErrorMessage(emailAddress, true)
     }
     else {
-        emailAddress.parentElement.classList.remove('error')
-    }
-    if (checkEmpty(password)) {
-        e.preventDefault()
-        password.parentElement.classList.add('error')
-    }
-    else {
-        password.parentElement.classList.remove('error')
-    }
-})
-
-function checkEmpty(field) {
-    if (field.value === "" || field.value === null) {
-        
-        return true
-    }
-    else {
-        return false
+        showErrorMessage(emailAddress, false)
     }
 }
 
+function checkEmpty(inputs) {
+    let foundError = false
+    inputs.forEach(input => {
+        if (input.value === "" || input.value === null) {
+            showErrorMessage(input, true)
+            foundError = true
+        }
+        else { showErrorMessage(input, false) }
+    })
+    return foundError
+}
+
+function showErrorMessage(input, show) {
+    if (show) {
+        input.parentElement.classList.add('error')
+    }
+    else { input.parentElement.classList.remove('error') }
+}
+
 function isEmail(email) {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-        return true
-    }
-    else {
-        return false
-    }
+    return (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
 }

@@ -11,7 +11,7 @@ function submit(event) {
     if (checkEmpty([firstName, lastName, password])) {
         event.preventDefault()
     }
-    if (checkEmpty(emailAddress) || !isEmail(emailAddress)) {
+    if (checkEmpty([emailAddress]) || !isEmail(emailAddress)) {
         event.preventDefault()
         showErrorMessage(emailAddress, true)
     }
@@ -21,6 +21,7 @@ function submit(event) {
 }
 
 function checkEmpty(inputs) {
+    //returns true if any of the inputs is empty, and shows error messages for those who are
     let foundError = false
     inputs.forEach(input => {
         if (input.value === "" || input.value === null) {
